@@ -180,7 +180,15 @@ ul li {
 } */
 /* END FOOTER */
 
-@media (min-width: 1200px) {
+/* For large devices, no need to make changes */
+@media (min-width: 992px) {
+  .page {
+    width: 100%;
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 /* For small and medium devices */
@@ -209,7 +217,8 @@ ul li {
   }
   .nav {
     display: flex;
-    justify-content: center; /* Center the navigation */
+    flex-direction: column; /* Display navigation vertically for mobile devices */
+    text-align: center; /* Center the navigation items */
   }
   .menu {
     font-size: small;
@@ -222,6 +231,9 @@ ul li {
   }
   .image {
     display: none;
+  }
+  .panel-footer {
+    position: static; /* Fix the footer's position */
   }
   .panel-footer section {
     margin-bottom: 30px;
