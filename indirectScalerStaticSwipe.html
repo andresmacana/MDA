@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jorge Macana</title>
+    <link rel="stylesheet" href="styles5.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
+      integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+      integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+      integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"
+      integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <div class="menu">
+        <h1>MDA and Uncertainty Calculator</h1>
+      </div>
+      <div class="sidebar">
+        <nav class="header-nav">
+          <ul class="fa-ul">
+            <li>
+              <a href="direcStaticScaler.html" class="my-button"
+                >Direct Static Scaler
+              </a>
+            </li>
+            <li>
+              <a href="indirectScalerStaticSwipe.html" class="my-button"
+                >Indirect Static Scale (swipe)</a
+              >
+            </li>
+            <li>
+              <a href="academic5.html"
+                ><i class="fa-solid fa-calculator" style="font-size: 2em"></i
+              ></a>
+            </li>
+            <li>
+              <a href="contact5.html"
+                ><i class="fa-solid fa-envelope" style="font-size: 2em"></i
+              ></a>
+            </li>
+            <li>
+              <a href="documents.pdf" target="_blank" style="color: red"
+                ><i class="fa-solid fa-file-pdf" style="font-size: 1em"></i
+                >En</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="content">
+        <h2>Indirect Static Scaler (Swipe)</h2>
+        <br />
+        <form action="cv.php" class="form" method="post" id="form-one">
+          <div class="form-group">
+            <p><label for="background">Enter background (cpm):</label></p>
+            <div class="col-sm-4 col-sm-2">
+              <input
+                class="form-control"
+                type="number"
+                id="background"
+                name="background"
+                value="600"
+              />
+            </div>
+
+            <p><label for="countTime">Enter count time (sec):</label></p>
+            <div class="col-sm-4">
+              <input
+                class="form-control"
+                type="number"
+                id="countTime"
+                name="countTime"
+                value="2434"
+              />
+            </div>
+
+            <p><label for="efficiency">Enter efficiency (decimal):</label></p>
+            <div class="col-sm-4">
+              <input
+                class="form-control"
+                type="number"
+                id="efficiency"
+                name="efficiency"
+                value="0.1"
+              />
+            </div>
+
+            <p><label for="swipeArea">Enter swipe area (cm2):</label></p>
+            <div class="col-sm-4">
+              <input
+                class="form-control"
+                type="number"
+                id="swipeArea"
+                name="swipeArea"
+                value="100"
+              />
+            </div>
+
+            <p>
+              <label for="swipingEfficiency">Enter swiping efficiency:</label>
+            </p>
+            <div class="col-sm-4">
+              <input
+                class="form-control"
+                type="number"
+                id="swipingEfficiency"
+                name="swipingEfficiency"
+                value="0.1"
+              />
+            </div>
+
+            <p><label for="netSwipe">Enter NET swipe (cpm):</label></p>
+            <div class="col-sm-4">
+              <input
+                class="form-control"
+                type="number"
+                id="netSwipe"
+                name="netSwipe"
+                value="50"
+              />
+            </div>
+
+            <p><label for="countTime2">Enter count time (sec):</label></p>
+            <div class="col-sm-4">
+              <input
+                class="form-control"
+                type="number"
+                id="countTime2"
+                name="countTime2"
+                value="60"
+              />
+            </div>
+          </div>
+          <div>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="calculateMDAAndMeasuredActivity()"
+            >
+              Calculate
+            </button>
+          </div>
+        </form>
+
+        <p>
+          MDC (cps):
+          <span id="mdcCps" style="color: red; font-weight: bold">-</span>
+        </p>
+        <p>
+          MDA (Bq):
+          <span id="mdaBq" style="color: red; font-weight: bold">-</span>
+        </p>
+        <p>
+          MDA (Bq/cm<sup>2</sup>):
+          <span id="mdaBqPerCm2" style="color: red; font-weight: bold">-</span>
+        </p>
+        <p>
+          Count rate on surface (cps):
+          <span
+            id="measuredCps"
+            style="color: rgb(244, 247, 95); font-weight: bold"
+            >-</span
+          >
+        </p>
+        <p>
+          Activity on surface (Bq):
+          <span
+            id="measuredBq"
+            style="color: rgb(244, 247, 95); font-weight: bold"
+            >-</span
+          >
+        </p>
+        <p>
+          Activity on surface (Bq/cm<sup>2</sup>):
+          <span
+            id="measuredBqPerCm2"
+            style="color: rgb(244, 247, 95); font-weight: bold"
+            >-</span
+          >
+        </p>
+        <p>
+          2&sigma; error (cps):
+          <span
+            id="sigmaErrorCps"
+            style="color: rgb(109, 109, 250); font-weight: bold"
+            >-</span
+          >
+        </p>
+        <p>
+          2&sigma; error (Bq):
+          <span
+            id="sigmaErrorBq"
+            style="color: rgb(109, 109, 250); font-weight: bold"
+            >-</span
+          >
+        </p>
+        <p>
+          2&sigma; error (Bq/cm<sup>2</sup>):
+          <span
+            id="sigmaErrorBqPerCm2"
+            style="color: rgb(109, 109, 250); font-weight: bold"
+            >-</span
+          >
+        </p>
+      </div>
+      <div class="panel-footer">
+        <div class="container">
+          <div class="text-center">
+            &copy; Copyright Jorge Macana 2023<br />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function calculateMDAAndMeasuredActivity() {
+        const background = parseFloat(
+          document.getElementById("background").value
+        );
+        const countTime = parseFloat(
+          document.getElementById("countTime").value
+        );
+        const efficiency = parseFloat(
+          document.getElementById("efficiency").value
+        );
+        const swipeArea = parseFloat(
+          document.getElementById("swipeArea").value
+        );
+        const netSwipe = parseFloat(document.getElementById("netSwipe").value);
+        const countTime2 = parseFloat(
+          document.getElementById("countTime2").value
+        );
+        const swipingEfficiency = parseFloat(
+          document.getElementById("swipingEfficiency").value
+        );
+
+        const mdcCps =
+          (4.66 * Math.sqrt((background / 60) * countTime) + 2.71) /
+          (countTime * swipingEfficiency);
+        const mdaBq = mdcCps / efficiency;
+        const mdaBqPerCm2 = mdaBq / swipeArea;
+
+        const measuredCps = netSwipe / (60 * swipingEfficiency);
+        const measuredBq = measuredCps / efficiency;
+        const measuredBqPerCm2 = measuredBq / swipeArea;
+
+        const sigmaErrorCps =
+          (2 *
+            Math.sqrt(
+              (((netSwipe + background) / 60) * countTime2) / countTime2 ** 2 +
+                ((background / 60) * countTime) / countTime ** 2
+            )) /
+          swipingEfficiency;
+        const sigmaErrorBq = sigmaErrorCps / efficiency;
+        const sigmaErrorBqPerCm2 = sigmaErrorBq / swipeArea;
+
+        document.getElementById("mdcCps").textContent = mdcCps.toFixed(3);
+        document.getElementById("mdaBq").textContent = mdaBq.toFixed(3);
+        document.getElementById("mdaBqPerCm2").textContent =
+          mdaBqPerCm2.toFixed(3);
+        document.getElementById("measuredCps").textContent =
+          measuredCps.toFixed(3);
+        document.getElementById("measuredBq").textContent =
+          measuredBq.toFixed(3);
+        document.getElementById("measuredBqPerCm2").textContent =
+          measuredBqPerCm2.toFixed(3);
+        document.getElementById("sigmaErrorCps").textContent =
+          sigmaErrorCps.toFixed(3);
+        document.getElementById("sigmaErrorBq").textContent =
+          sigmaErrorBq.toFixed(3);
+        document.getElementById("sigmaErrorBqPerCm2").textContent =
+          sigmaErrorBqPerCm2.toFixed(3);
+      }
+    </script>
+  </body>
+</html>
