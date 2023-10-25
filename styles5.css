@@ -194,12 +194,13 @@ ul li {
   }
   /* End Header */
 }
-/********** Small devices only **********/
-@media (min-width: 768px) and (max-width: 991px) {
+/* Styles for small screens */
+@media (max-width: 767px) {
   .page {
-    width: auto;
+    padding: 10px;
   }
 }
+
 /********** Extra small devices only **********/
 @media (max-width: 767px) {
   /* Header */
@@ -321,7 +322,7 @@ ul li {
 }
 
 /**FORM**/
-input[type="submit"] {
+/* input[type="submit"] {
   background-color: #8d96d6;
   color: white;
   padding: 12px 20px;
@@ -346,4 +347,4 @@ input[type="submit"]:hover {
     width: 100%;
     display: block;
   }
-}
+} */
