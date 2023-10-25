@@ -146,40 +146,6 @@ ul li {
   color: yellowgreen;
 }
 
-/* FOOTER */
-/* .panel-footer {
-  margin-top: 0px;
-  padding-top: 20px;
-  padding-bottom: 15px;
-  background-color: #222;
-  border-top: 0;
-  color: greenyellow;
-}
-.panel-footer div.row {
-  margin-bottom: 5px;
-}
-#hours,
-#address {
-  line-height: 2;
-  text-align: center;
-}
-#hours > span,
-#address > span {
-  font-size: 1.3em;
-}
-#address p {
-  color: #a7ed7e;
-  font-size: 0.8em;
-  line-height: 1.8;
-}
-#testimonials {
-  font-style: italic;
-}
-#testimonials p:nth-child(2) {
-  margin-top: 25px;
-} */
-/* END FOOTER */
-
 /* For large devices, no need to make changes */
 @media (min-width: 992px) {
   .page {
@@ -207,6 +173,10 @@ ul li {
   }
   .sidebar {
     background-color: transparent;
+  }
+  .my-button {
+    width: 100%; /* Make buttons full width */
+    font-size: smaller; /* Adjust button font size for small screens */
   }
 }
 
@@ -258,6 +228,10 @@ ul li {
   .sidebar {
     background-color: transparent;
   }
+  .my-button {
+    width: 100%; /* Make buttons full width */
+    font-size: smaller; /* Adjust button font size for small screens */
+  }
 }
 
 /* For super extra small devices (e.g., iPhone 4) */
@@ -289,5 +263,9 @@ ul li {
   }
   .fa-ul {
     font-size: smaller;
+  }
+  .my-button {
+    width: 100%; /* Make buttons full width */
+    font-size: smaller; /* Adjust button font size for small screens */
   }
 }
