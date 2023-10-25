@@ -169,14 +169,14 @@ ul li {
   }
   .content,
   .content-work {
-    font-size: medium;
+    font-size: large;
   }
   .sidebar {
     background-color: transparent;
   }
   .my-button {
     width: 100%; /* Make buttons full width */
-    font-size: smaller; /* Adjust button font size for small screens */
+    font-size: large; /* Adjust button font size for small screens */
   }
 }
 
