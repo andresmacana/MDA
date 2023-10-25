@@ -148,52 +148,88 @@ ul li {
 
 /* FOOTER */
 /* .panel-footer {
-  margin-top: 0px;
-  padding-top: 20px;
-  padding-bottom: 15px;
-  background-color: #222;
-  border-top: 0;
-  color: greenyellow;
-}
-.panel-footer div.row {
-  margin-bottom: 5px;
-}
-#hours,
-#address {
-  line-height: 2;
-  text-align: center;
-}
-#hours > span,
-#address > span {
-  font-size: 1.3em;
-}
-#address p {
-  color: #a7ed7e;
-  font-size: 0.8em;
-  line-height: 1.8;
-}
-#testimonials {
-  font-style: italic;
-}
-#testimonials p:nth-child(2) {
-  margin-top: 25px;
-} */
+    margin-top: 0px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    background-color: #222;
+    border-top: 0;
+    color: greenyellow;
+  }
+  .panel-footer div.row {
+    margin-bottom: 5px;
+  }
+  #hours,
+  #address {
+    line-height: 2;
+    text-align: center;
+  }
+  #hours > span,
+  #address > span {
+    font-size: 1.3em;
+  }
+  #address p {
+    color: #a7ed7e;
+    font-size: 0.8em;
+    line-height: 1.8;
+  }
+  #testimonials {
+    font-style: italic;
+  }
+  #testimonials p:nth-child(2) {
+    margin-top: 25px;
+  } */
 /* END FOOTER */
 
 @media (min-width: 1200px) {
 }
 
-/* For small and medium devices */
-@media (max-width: 991px) {
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+  /*Header*/
   .page {
     width: 100%;
-    padding: 10px; /* Add padding for small screens */
   }
-  .nav {
+  nav {
     display: flex;
-    justify-content: center; /* Center the navigation */
   }
-  .content,
+  /* End Header */
+}
+/* Styles for small screens */
+@media (max-width: 767px) {
+  .page {
+    padding: 10px;
+  }
+}
+
+/********** Extra small devices only **********/
+@media (max-width: 767px) {
+  /* Header */
+  .page {
+    width: 100%;
+  }
+  .sidebar {
+    background-color: transparent;
+  }
+  /* End Header */
+}
+@media only screen and (max-width: 600px) {
+  nav {
+    justify-content: center;
+  }
+  .sidebar {
+    background-color: transparent;
+  }
+}
+
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Home Page */
+  .page {
+    width: 100%;
+  }
+  .content {
+    font-size: medium;
+  }
   .content-work {
     font-size: medium;
   }
@@ -202,23 +238,23 @@ ul li {
   }
 }
 
-/* For extra small devices */
+/********** Extra small devices only **********/
 @media (max-width: 767px) {
+  /* Header */
   .page {
     width: 100%;
-  }
-  .nav {
-    display: flex;
-    justify-content: center; /* Center the navigation */
   }
   .menu {
     font-size: small;
     text-align: center;
   }
-  .content,
+  .content {
+    font-size: smaller;
+    text-align: left;
+  }
   .content-work {
     font-size: smaller;
-    text-align: center; /* Center the text */
+    text-align: left;
   }
   .image {
     display: none;
@@ -237,6 +273,7 @@ ul li {
   #testimonials {
     font-size: smaller;
   }
+  /* End Footer */
   .header-nav ul li a {
     font-size: small;
   }
@@ -248,8 +285,9 @@ ul li {
   }
 }
 
-/* For super extra small devices (e.g., iPhone 4) */
+/********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
 @media (max-width: 479px) {
+  /* Header */
   .page {
     width: 100%;
   }
@@ -257,10 +295,13 @@ ul li {
     font-size: smaller;
     text-align: center;
   }
-  .content,
+  .content {
+    font-size: smaller;
+    text-align: justify;
+  }
   .content-work {
     font-size: smaller;
-    text-align: center; /* Center the text */
+    text-align: justify;
   }
   .header-nav img {
     display: none;
@@ -279,3 +320,31 @@ ul li {
     font-size: smaller;
   }
 }
+
+/**FORM**/
+/* input[type="submit"] {
+    background-color: #8d96d6;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+  }
+  input[type="submit"]:hover {
+    background-color: #1c30dd;
+  }
+  @media only screen and (max-width: 600px) {
+    .form,
+    input[type="submit"] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+  @media only screen and (max-width: 479px) {
+    .form,
+    input[type="submit"] {
+      width: 100%;
+      display: block;
+    }
+  } */
