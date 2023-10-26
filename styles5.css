@@ -29,6 +29,13 @@ body {
   height: 90px;
 }
 
+.my-button3 {
+  width: 100%; /* Make buttons full width */
+  font-size: 14px; /* Adjust the font size to your preference */
+  padding: 10px; /* Adjust the padding to control the button size */
+  height: 60px;
+}
+
 nav {
   font-weight: bold;
   display: flex;
@@ -140,7 +147,13 @@ ul li {
   }
   .my-button {
     width: 100%; /* Make buttons full width */
-    font-size: large; /* Adjust button font size for small screens */
+    font-size: medium; /* Adjust button font size for small screens */
+  }
+  .my-button2 {
+    width: 100%; /* Make buttons full width */
+    font-size: 12px; /* Adjust the font size to your preference */
+    padding: 8px; /* Adjust the padding to control the button size */
+    height: 100px;
   }
 }
 
