@@ -96,17 +96,6 @@ nav ul {
   width: 100%;
 }
 
-.column1 {
-  width: 50%;
-  float: left;
-  display: flex;
-}
-.column2 {
-  width: 50%;
-  /* float: center; */
-  text-align: center;
-  display: flex;
-}
 .page {
   min-width: 400px;
   max-width: 1280px;
@@ -198,6 +187,7 @@ ul li {
     display: flex;
     flex-direction: column; /* Display navigation vertically for mobile devices */
     text-align: center; /* Center the navigation items */
+    justify-content: space-between;
   }
   .menu {
     font-size: small;
@@ -211,23 +201,7 @@ ul li {
   .image {
     display: none;
   }
-  .panel-footer {
-    position: static; /* Fix the footer's position */
-  }
-  .panel-footer section {
-    margin-bottom: 30px;
-    text-align: center;
-    font-size: smaller;
-  }
-  .panel-footer section:nth-child(3) {
-    margin-bottom: 0;
-  }
-  .panel-footer section hr {
-    width: 50%;
-  }
-  #testimonials {
-    font-size: smaller;
-  }
+
   .header-nav ul li a {
     font-size: small;
   }
@@ -251,19 +225,33 @@ ul li {
   .menu {
     font-size: smaller;
     text-align: center;
+    display: flex;
+    justify-content: center;
   }
   .content,
   .content-work {
     font-size: smaller;
     text-align: center; /* Center the text */
+    margin-top: 50px;
+    height: 1500px;
   }
-  .header-nav img {
-    display: none;
+  .header-nav {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
   }
   .sidebar {
-    font-size: smaller;
-    background-color: gray;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: small;
+    background-color: rgb(188, 198, 250);
+    margin-top: 80px;
+    margin-left: 100px;
+    justify-content: baseline;
+    width: 95%;
+    height: auto;
   }
+
   .header-nav {
     background-color: transparent;
   }
@@ -272,9 +260,25 @@ ul li {
   }
   .fa-ul {
     font-size: smaller;
+    display: flex;
   }
   .my-button {
     width: 100%; /* Make buttons full width */
-    font-size: smaller; /* Adjust button font size for small screens */
+    font-size: 18px; /* Adjust the font size to your preference */
+    padding: 10px; /* Adjust the padding to control the button size */
+    height: 40px;
+  }
+
+  .my-button2 {
+    width: 100%; /* Make buttons full width */
+    font-size: 14px; /* Adjust the font size to your preference */
+    padding: 10px; /* Adjust the padding to control the button size */
+    height: 60px;
+  }
+
+  .panel-footer {
+    background-color: rgb(154, 241, 132);
+    text-align: center;
+    width: 100%;
   }
 }
