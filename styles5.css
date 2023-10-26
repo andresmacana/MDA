@@ -32,7 +32,7 @@ body {
 nav {
   font-weight: bold;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
@@ -52,12 +52,7 @@ nav ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.photo {
-  height: 150px;
-  background-color: lightgrey;
-  float: left;
+  font-size: small;
 }
 
 .header-nav a:hover,
@@ -81,7 +76,7 @@ nav ul {
 }
 
 .alignright {
-  float: right;
+  float: none;
 }
 .workshops {
   list-style-type: square;
@@ -144,6 +139,20 @@ ul li {
 }
 .menu p {
   color: yellowgreen;
+}
+
+@media screen and (min-width: 1200px) {
+  .page {
+    width: 100%;
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+  }
+  .my-button {
+    width: 100%; /* Make buttons full width */
+    font-size: large; /* Adjust button font size for small screens */
+  }
 }
 
 /* For large devices, no need to make changes */
