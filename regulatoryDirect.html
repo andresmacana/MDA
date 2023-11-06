@@ -84,7 +84,9 @@
         </nav>
       </div>
       <div class="content">
-        <h2>Direct Static Scaler</h2>
+        <h2>
+          *THRESHOLD TO ENSURE COMPLIANCE WITH REGULATORY CRITERION (direct)
+        </h2>
         <br />
         <form action="cv.php" class="form" method="post" id="form-one">
           <div class="form-group">
@@ -95,7 +97,7 @@
                 type="number"
                 id="background"
                 name="background"
-                value="40"
+                value="50"
               />
             </div>
 
@@ -110,47 +112,29 @@
               />
             </div>
 
-            <p><label for="efficiency">Enter efficiency (decimal):</label></p>
+            <p><label for="efficiency">Enter efficiency:</label></p>
             <div class="col-sm-4">
               <input
                 class="form-control"
                 type="number"
                 id="efficiency"
                 name="efficiency"
-                value="0.1"
+                value="0.008"
               />
             </div>
 
-            <p><label for="detectorArea">Enter detector area (cm2):</label></p>
+            <p>
+              <label for="detectorArea"
+                >Enter detector area (cm<sup>2</sup> ):</label
+              >
+            </p>
             <div class="col-sm-4">
               <input
                 class="form-control"
                 type="number"
                 id="detectorArea"
                 name="detectorArea"
-                value="6"
-              />
-            </div>
-
-            <p><label for="netMeasured">Enter NET measured (cpm):</label></p>
-            <div class="col-sm-4">
-              <input
-                class="form-control"
-                type="number"
-                id="netMeasured"
-                name="netMeasured"
-                value="5000"
-              />
-            </div>
-
-            <p><label for="countTime2">Enter count time (sec):</label></p>
-            <div class="col-sm-4">
-              <input
-                class="form-control"
-                type="number"
-                id="countTime2"
-                name="countTime2"
-                value="20000"
+                value="15"
               />
             </div>
           </div>
@@ -166,64 +150,8 @@
         </form>
 
         <p>
-          MDC (cps):
-          <span id="mdcCps" style="color: red; font-weight: bold">-</span>
-        </p>
-        <p>
-          MDA (Bq):
-          <span id="mdaBq" style="color: red; font-weight: bold">-</span>
-        </p>
-        <p>
-          MDA (Bq/cm<sup>2</sup>):
+          Must be &le; criterion (Bq/cm<sup>2</sup>):
           <span id="mdaBqPerCm2" style="color: red; font-weight: bold">-</span>
-        </p>
-        <p>
-          Measured count rate (cps):
-          <span
-            id="measuredCps"
-            style="color: rgb(244, 247, 95); font-weight: bold"
-            >-</span
-          >
-        </p>
-        <p>
-          Measured activity (Bq):
-          <span
-            id="measuredBq"
-            style="color: rgb(244, 247, 95); font-weight: bold"
-            >-</span
-          >
-        </p>
-        <p>
-          Measured activity (Bq/cm<sup>2</sup>):
-          <span
-            id="measuredBqPerCm2"
-            style="color: rgb(244, 247, 95); font-weight: bold"
-            >-</span
-          >
-        </p>
-        <p>
-          2&sigma; error (cps):
-          <span
-            id="sigmaErrorCps"
-            style="color: rgb(109, 109, 250); font-weight: bold"
-            >-</span
-          >
-        </p>
-        <p>
-          2&sigma; error (Bq):
-          <span
-            id="sigmaErrorBq"
-            style="color: rgb(109, 109, 250); font-weight: bold"
-            >-</span
-          >
-        </p>
-        <p>
-          2&sigma; error (Bq/cm<sup>2</sup>):
-          <span
-            id="sigmaErrorBqPerCm2"
-            style="color: rgb(109, 109, 250); font-weight: bold"
-            >-</span
-          >
         </p>
       </div>
       <div class="panel-footer">
@@ -245,47 +173,13 @@
         const detectorArea = parseFloat(
           document.getElementById("detectorArea").value
         );
-        const netMeasured = parseFloat(
-          document.getElementById("netMeasured").value
-        );
-        const countTime2 = parseFloat(
-          document.getElementById("countTime2").value
-        );
 
-        const mdcCps =
-          (4.66 * Math.sqrt((background / 60) * countTime) + 2.71) / countTime;
-        const mdaBq = mdcCps / efficiency;
-        const mdaBqPerCm2 = mdaBq / detectorArea;
+        const mdaBqPerCm2 =
+          (8.12 * Math.sqrt((background / 60) * countTime) + 2.71) /
+          (countTime * efficiency * detectorArea);
 
-        const measuredCps = netMeasured / 60;
-        const measuredBq = measuredCps / efficiency;
-        const measuredBqPerCm2 = measuredBq / detectorArea;
-
-        const sigmaErrorCps =
-          2 *
-          Math.sqrt(
-            (((netMeasured + background) / 60) * countTime2) / countTime2 ** 2 +
-              ((background / 60) * countTime) / countTime ** 2
-          );
-        const sigmaErrorBq = sigmaErrorCps / efficiency;
-        const sigmaErrorBqPerCm2 = sigmaErrorBq / detectorArea;
-
-        document.getElementById("mdcCps").textContent = mdcCps.toFixed(3);
-        document.getElementById("mdaBq").textContent = mdaBq.toFixed(3);
         document.getElementById("mdaBqPerCm2").textContent =
           mdaBqPerCm2.toFixed(3);
-        document.getElementById("measuredCps").textContent =
-          measuredCps.toFixed(3);
-        document.getElementById("measuredBq").textContent =
-          measuredBq.toFixed(3);
-        document.getElementById("measuredBqPerCm2").textContent =
-          measuredBqPerCm2.toFixed(3);
-        document.getElementById("sigmaErrorCps").textContent =
-          sigmaErrorCps.toFixed(3);
-        document.getElementById("sigmaErrorBq").textContent =
-          sigmaErrorBq.toFixed(3);
-        document.getElementById("sigmaErrorBqPerCm2").textContent =
-          sigmaErrorBqPerCm2.toFixed(3);
       }
     </script>
   </body>
